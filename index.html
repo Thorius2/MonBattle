@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonBattles</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headerText">
+        <h1>MonBattles</h1>
+        <h2>
+          Welcome to the most low-cost and worst balanced pokemon game in the
+          entire web. I can't promise you'll enjoy it, but hey, at least it's
+          free!
+        </h2>
+      </div>
+    </header>
+
+    <section class="sectionContainer rulesSection">
+      <h3>How to Play:</h3>
+      <p>
+        1) Choose a number between 1 and 898, and type it in the field
+        "PokeNumber".
+      </p>
+      <p>
+        2) Choose the stat that you want to use against your oponent. The one
+        with the highest stat wins!
+      </p>
+      3) Click on the "Fight" button to start. The computer will then select a
+      random Pokemon. The one with the higher stat, will be the winner and earn
+      a point.
+      <p>
+        4) Once either you or the computer win 6 points, the match will end.
+        Keep in mind that you can't use the same Pokemon in a single round.
+      </p>
+      <p>
+        5) In case of tie, the player will earn the point (the game is bad but
+        the dev is good :D)
+      </p>
+    </section>
+
+    <main>
+      <div class="formContainer">
+        <h2>Choose your Mon!</h2>
+        <form>
+          <div class="inputContainer">
+            <label for="pokeNumber">PokeNumber:</label>
+            <input type="number" id="pokeNumber" />
+          </div>
+          <div class="inputContainer">
+            <label for="selectStat">Stat:</label>
+            <select name="selectStat" id="selectStat">
+              <option value="hp">HP</option>
+              <option value="attack">Attack</option>
+              <option value="defense">Defense</option>
+              <option value="spAttack">Special Attack</option>
+              <option value="spDefense">Special Defense</option>
+              <option value="speed">Speed</option>
+              <option value="height">Height</option>
+              <option value="weight">Weight</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">Fight!</button>
+          <small class="hidden error-msg"></small>
+        </form>
+      </div>
+
+      <!-- Probablemente con GRID queda mejor la parte de stats -->
+      <div class="pokeContainer">
+        <div class="playerContainer pokeCard">
+          <h2>Player Selection</h2>
+          <h3># - Pokemon</h3>
+          <img
+            src="https://static.thenounproject.com/png/774651-200.png"
+            class="pokeImg"
+            alt="PokeImg"
+          />
+          <div class="statsContainer">
+            <div class="substats">
+              <p class="hp">HP: ???</p>
+              <p class="attack">Attack: ???</p>
+              <p class="defense">Defense: ???</p>
+              <p class="height">Height: ??? cm.</p>
+            </div>
+            <div class="substats">
+              <p class="spDefense">Sp. Defense: ???</p>
+              <p class="spAttack">Sp. Attack: ???</p>
+              <p class="speed">Speed: ???</p>
+              <p class="weight">Weight: ??? kg.</p>
+            </div>
+          </div>
+        </div>
+        <h2>VS.</h2>
+        <div class="machineContainer pokeCard">
+          <h2>Computer Selection</h2>
+          <h3># - Pokemon</h3>
+          <img
+            src="https://static.thenounproject.com/png/1164524-200.png"
+            class="pokeImg"
+            alt="PokeImg"
+          />
+          <div class="statsContainer">
+            <div class="substats">
+              <p class="hp">HP: ???</p>
+              <p class="attack">Attack: ???</p>
+              <p class="defense">Defense: ???</p>
+              <p class="height">Height: ??? cm.</p>
+            </div>
+            <div class="substats">
+              <p class="spDefense">Sp. Defense: ???</p>
+              <p class="spAttack">Sp. Attack: ???</p>
+              <p class="speed">Speed: ???</p>
+              <p class="weight">Weight: ??? kg.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="resultsContainer">
+      <h3 class="noMatches">
+        No matches have been played in the actual Round. Please start a fight
+        and see the results history here.
+      </h3>
+      <ul class="matchHistory hidden"></ul>
+    </div>
+
+    <div class="scoreContainer">
+      <h2>Current Score</h2>
+      <div class="scores">
+        <div class="individualScore">
+          <h3>Player</h3>
+          <p class="playerScore">0</p>
+        </div>
+        <div class="individualScore">
+          <h3>Computer</h3>
+          <p class="computerScore">0</p>
+        </div>
+      </div>
+      <button type="submit" class="reset-btn">Reset Score</button>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
