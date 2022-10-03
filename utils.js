@@ -32,7 +32,7 @@ const isDuplicated = (listaPokes, numPoke) => {
 //Revisa si alguien ya llegó a los 6 puntos, y evita que se pueda volver a jguar
 const scoreSix = () => {
     valid = false;
-    if (Number(playerScore.textContent) >= 6 && Number(computerScore.textContent) >= 6) {
+    if (Number(playerScore.textContent) >= 6 || Number(computerScore.textContent) >= 6) {
         return valid = true;
     }
 
